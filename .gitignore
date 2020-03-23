@@ -1,52 +1,24 @@
-# Prerequisites
-*.d
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+#include<stdio.h> 
+#include<conio.h>
 
-# Linker output
-*.ilk
-*.map
-*.exp
+void rr(int no,int remt[10],int Cur_t,int arT[10], int bsT[10]);
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+main() 
+{
+	int Proc_no,j,process,CurT,NoProc,time_quantum,arrival_Time[10],burst_Time[10],remt[10];
+  
+	printf("Enter number of processes "); 
+	scanf("%d",&process);
+	NoProc = process;
+	
+	printf("\nEnter the arrival time and burst time of the processes\n");
+	for(Proc_no = 0;Proc_no < process;Proc_no++) 
+	{
+		printf("\nProcess P%d\n",Proc_no+1);
+		printf("Arrival time = "); 
+		scanf("%d",&arrival_Time[Proc_no]);
+		printf("Burst time = "); 
+		scanf("%d",&burst_Time[Proc_no]); -
+		remt[Proc_no]=burst_Time[Proc_no]; 
+	} 
