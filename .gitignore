@@ -22,3 +22,15 @@ main()
 		scanf("%d",&burst_Time[Proc_no]); -
 		remt[Proc_no]=burst_Time[Proc_no]; 
 	} 
+	printf("The details of time quantum are as follows:\n");
+	printf("The time quantum for first round is 6.\n"); 
+	time_quantum=3;
+	CurT=0;
+	for(Proc_no=0;NoProc!=0;Proc_no<NoProc) 
+	{	
+		if(remt[Proc_no]>0)
+		{ 
+			remt[Proc_no]-=time_quantum; 
+			CurT+=time_quantum; 
+		}
+	}
