@@ -2,11 +2,11 @@
 #include<stdio.h> 
 #include<conio.h>
 
-void rr(int no,int remt[10],int Cur_t,int arT[10], int bsT[10]);
+void fun(int process,int remt[10],int Cur_t,int arrival_Time[10], int burst_Time[10]);
 
 main() 
 {
-	int Proc_no,j,process,CurT,NoProc,time_quantum,arrival_Time[10],burst_Time[10],remt[10];
+	int Proc_no,j,process,CurT,NoProc,time_quantum,arrival_Time[10],burst_Time[10],remt[10],x=1;
   
 	printf("Enter number of processes "); 
 	scanf("%d",&process);
@@ -34,3 +34,28 @@ main()
 			CurT+=time_quantum; 
 		}
 	}
+	if(Proc_no==no-1){
+			x++;
+			if(x==2){
+				Proc_no=0;
+				time_quantum=6;
+				
+				printf("The time quantum for second round is 10. \n");
+			}
+			else{
+				break;
+			}
+		}
+		else if(CurT >= arrival_Time[Proc_no+1]){
+			Proc_no++;
+		}
+		else{
+			Proc_no=0;
+		}
+	}
+	
+	fun(process,remt,CurT,arrival_Time,burst_Time);
+	
+	return 0;
+}
+
