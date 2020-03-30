@@ -20,7 +20,7 @@ main()
 		printf("Arrival time = "); 
 		scanf("%d",&arrival_Time[Proc_no]);
 		printf("Burst time = "); 
-		scanf("%d",&burst_Time[Proc_no]); -
+		scanf("%d",&burst_Time[Proc_no]); 
 		remt[Proc_no]=burst_Time[Proc_no]; 
 	} 
 	printf("The details of time quantum are as follows:\n");
@@ -83,5 +83,16 @@ void fun(int process,int remt[10],int Cur_t,int arrival_Time[10], int burst_Time
     total=0;
    printf("\nProcess\t\tBurst time\t\twaiting time\t\tTurnaround Time");
    
+   for(i=0;i<n;i++)
+    {
+        tut_t[i]=btime[i]+w_time[i];
+        total=total + tut_t[i];
+       printf("\nP%d\t\t\t%d\t\t\t%d\t\t\t%d",Proc_no[i],btime[i],w_time[i],tut_t[i]);
+        
+        
+    }
+    avg_tut=(float)total/n;
+    printf("\n\nAverage waiting time = %f",avg_wait);
+    printf("\n Average turnaround time = %f\n",avg_tut);
   }
 
