@@ -25,7 +25,7 @@ main()
 	} 
 	printf("The details of time quantum are as follows:\n");
 	printf("The time quantum for first round is 6.\n"); 
-	time_quantum=3;
+	time_quantum=6;
 	CurT=0;
 	for(Proc_no=0;NoProc!=0;Proc_no<NoProc) 
 	{	
@@ -39,7 +39,7 @@ main()
 			x++;
 			if(x==2){
 				Proc_no=0;
-				time_quantum=6;
+				time_quantum=10;
 				
 				printf("The time quantum for second round is 10. \n");
 			}
